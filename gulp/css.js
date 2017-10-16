@@ -13,5 +13,5 @@ gulp.task('css', function () {
             console.log(err.toString());
             this.emit('end');
         })
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./docs'));
 })

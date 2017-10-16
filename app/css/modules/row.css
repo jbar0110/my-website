@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
 
-    @mixin isSmall {
+    @mixin smThanMedium {
         flex-direction: column;
     }
     

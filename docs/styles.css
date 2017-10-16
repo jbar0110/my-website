@@ -254,20 +254,25 @@
 }@media (min-width: 768px) {body.sticky-top {padding-top: 60px}}body.blog-bg {background: #EFEFEF;color: #151515;}img {
     max-width : 100%;
     height    : auto;
-}.invisible { visibility : hidden }.hide      { display    : none   }.pull-left  { float: left  }.pull-right { float: right }.scroll-lock { overflow: hidden }.page-lock { overflow: hidden }#react-app {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    min-height: 100vh;
-}#react-app .footer {
-        -webkit-box-flex: 1;
-            -ms-flex-positive: 1;
-                flex-grow: 1;
-    }.btn {
+}.invisible { visibility : hidden }.hide      { display    : none   }.pull-left  { float: left  }.pull-right { float: right }.scroll-lock { overflow: hidden }.page-lock { overflow: hidden }@media (max-width: 768px) {#home {background: url('img/purple-sky.jpg');}}@media (min-width: 768px) {#home {background: url('img/purple-sky-lg.jpg');}}#home {background-size: 'cover';}#blog {
+    background: url('img/blog-bg.jpg');
+    background-size: 'cover';
+}.me {
+    display: block;
+    margin: 0.35rem auto 2rem auto;
+    width: 300px;
+    height: 300px;
+
+    border: 7px solid rgb(89, 24, 126);
+}.image {
+    display: block;
+    margin: 1rem auto;
+
+    width: 300px;
+    height: auto;
+}.circle {
+    border-radius: 9999px
+}.btn {
     text-decoration : none;
     display         : inline-block;
     text-align      : center
@@ -431,7 +436,7 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-}@media (max-width: 480px) {.row {-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column}}.row .col-xs-1 {
+}@media (max-width: 768px) {.row {-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column}}.row .col-xs-1 {
         display        : -webkit-box;
         display        : -ms-flexbox;
         display        : flex;

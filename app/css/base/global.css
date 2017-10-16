@@ -36,13 +36,38 @@ img {
 .scroll-lock { overflow: hidden }
 .page-lock { overflow: hidden }
 
-
-#react-app {
-    display: flex;
-    flex-flow: column nowrap;
-    min-height: 100vh;
-
-    .footer {
-        flex-grow: 1;
+#home {
+    @mixin smThanMedium {
+        background: url('img/purple-sky.jpg');
     }
+    @mixin atMedium {
+        background: url('img/purple-sky-lg.jpg');
+    }
+    background-size: 'cover';
+}
+
+#blog {
+    background: url('img/blog-bg.jpg');
+    background-size: 'cover';
+}
+
+.me {
+    display: block;
+    margin: 0.35rem auto 2rem auto;
+    width: 300px;
+    height: 300px;
+
+    border: 7px solid $brand-secondary;
+}
+
+.image {
+    display: block;
+    margin: 1rem auto;
+
+    width: 300px;
+    height: auto;
+}
+
+.circle {
+    border-radius: 9999px
 }
