@@ -1,0 +1,51 @@
+.generic-content {
+    *:not(h1, h2, h3, h4, h5, h6) {
+        font-weight: 300;
+        @mixin atSmall {
+            font-size: 1.125rem;
+        }
+    }
+
+    a {
+        @mixin noTextDecoration;
+    }
+
+    p > a, & > a {
+        text-decoration : underline;
+        font-weight     : 700;
+        color           : inherit;
+    }
+
+    strong {
+        font-weight: bold !important
+    }
+
+    p {
+        line-height: 1.65;
+        margin: 0 0 1.5rem 0;
+        @mixin atSmall {
+            margin: 0 0 1.8rem 0;
+            font-size: 1.125rem;
+        }
+    }
+
+    ul {
+        padding: 0;
+        &.no-bullets li {
+            list-style-type: none;
+        }
+        li {
+            margin: 7px 0;
+            line-height: 1.35;
+        }
+    }
+
+    ul, ol {
+        margin-left: 15px;
+        margin-bottom: 15px;
+    }
+    
+    li {
+        margin: 3px 0;
+    }
+}

@@ -1,0 +1,15 @@
+.nav {
+
+    background: $navs-color;
+    color: $navs-text;
+    padding: 0 1.15rem;
+
+    display: flex;
+
+    ul { margin: 0 }
+
+    li {
+        list-style-type: none;
+    }
+
+}

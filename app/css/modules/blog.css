@@ -1,0 +1,49 @@
+.blog-entry {
+    position: relative;
+
+    &__back {
+        position: absolute;
+        top: 1rem;
+        left: 1.315rem;
+        font-size: 1.125rem;
+
+        background: none;
+        border: none;
+
+        span {
+            font-weight: 800;
+            font-size: 110%;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        margin: 0;
+    }
+
+    &__post-date {
+        display: block;
+        margin-bottom: 1.3rem;
+    }
+}
+
+.blog-links {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        @mixin noTextDecoration;
+        display: block;
+        background: $brand-secondary;
+        color: white;
+        text-align: center;
+
+        margin: 0.5rem 0;
+        padding: 0.35rem 0.45rem;
+        border-radius: 1rem;
+    }
+}

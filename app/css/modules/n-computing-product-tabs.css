@@ -1,0 +1,49 @@
+.n-computing-product-tabs {
+
+    $tabs-color: $brand-primary;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    @mixin isSmall {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    & > * {
+        position: relative;
+        flex-basis: 45%;
+        @mixin isSmall {
+            flex-basis: 100%
+        }
+    }
+
+    img {
+        min-width: 200px;
+        max-width: 400px;
+        height: auto;
+
+        @mixin isSmall {
+            max-width: 100%;
+        }
+
+        background: $tabs-color;
+        padding: 4rem;
+
+        @mixin atSmall {
+            border-radius: 999px;
+        }
+    }
+
+    p {
+        position: absolute;
+        top: 1.5rem; left: 3rem;
+        @mixin atSmall {
+            top: 2rem; left: 4rem;
+        }
+        color: $white;
+        font-size: 1.65rem !important;
+        background: $tabs-color;
+        @mixin isSmall { font-size: 1.35rem !important }
+    }
+}

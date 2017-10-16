@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | Jennell Barnett</title>
+    <meta name="theme-color" content="#440066" />
+    <meta name='description' content='' />
+    <!--  build:css -->
+    <link rel='stylesheet' href='/styles.css' type='text/css' />
+    <!--  endbuild  -->
+</head>
+<body>
+    <nav id='primary-nav' class='nav nav--primary'>
+        <h1 class="nav--primary__logo">Jennell Barnett</h1>
+        <div class="nav--primary__links">
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About</a>
+            <a class='active' href="/blog.html">Blog</a>
+        </div>
+    </nav>
+
+    <nav class='nav nav--mobile visible'>
+        <button id='menu-toggle' class="menu-toggle">
+            <span class='hamburger'>
+                <span class="middle"></span>
+            </span>
+        </button>
+    </nav>
+
+    <main>
+        <section class="page-section">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h1 class="section-title section-title--less-margin">Latest Blogs</h1>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="blog-links">
+                            <a href="blogs/2017101501.html">Interesting Things I've Done In Class</a>
+                            <a href="blogs/2017101502.html">My Extracurricular Activities</a>
+                            <a href="blogs/2017101503.html">Cool Concepts I've Learned This Semester (Thus Far)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--  build:js scripts/app.js -->
+    <script src='/scripts/app.js'></script> 
+    <!--      endbuild -->
+</body>
+</html>

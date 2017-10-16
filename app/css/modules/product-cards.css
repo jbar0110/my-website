@@ -1,0 +1,11 @@
+.product-cards {
+    .feature-item {
+        &__icon {
+            transform: scale(3);
+            transform-origin: top center;
+        }
+        &__title {
+            margin-top: 4.5rem;
+        }
+    }
+}

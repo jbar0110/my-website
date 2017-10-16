@@ -1,0 +1,89 @@
+.slideshow {
+    overflow-y: hidden;
+    position: relative;
+
+    &__slide {
+        position: relative;
+        z-index: 90;
+    }
+
+    &__slide-button {
+        position: absolute;
+        z-index: 100;
+        fill: #FFF;
+        opacity: 0.45;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @mixin smThanMedium {
+            width: 60px !important;
+            height: 60px !important;
+        }
+
+        &.left {
+            left: 2rem;
+            @mixin smThanMedium { left: 0.5rem }
+        }
+        &.right {
+            right: 2rem;
+            @mixin smThanMedium { right: 0.5rem }
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+
+    &__toggle-play {
+        position: absolute;
+        z-index: 100;
+        top: 1rem;
+        right: 1rem;
+
+        width: 3rem;
+        height: 3rem;
+
+        border: none;
+        border-radius: 999px;
+        color: #333;
+        font-size: 1.35rem;
+        background: color(white);
+        box-shadow: 0 2px 1px 3px color(black a(0.35));
+        opacity: 0.5;
+
+        @mixin smThanMedium {
+            top: 0.5rem;
+            right: 0.5rem;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1rem;
+        }
+
+        &:hover {
+            opacity: 1
+        }
+    }
+
+    &__jump-btn-group {
+        position: absolute;
+        z-index: 100;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__jump-btn {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 999px;
+        border: none;
+        background: #FFF;
+        margin: 0 0.15rem;
+        box-shadow: 0 2px 1px 3px color(black a(0.35));
+
+        &.active {
+            background: $brand-secondary;
+        }
+    }
+}

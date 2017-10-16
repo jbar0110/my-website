@@ -1,0 +1,24 @@
+.nav--contacts {
+
+    @mixin smThanMedium {
+        display: none
+    }
+
+    width: 100%;
+    height: $contacts-navH;
+    padding-bottom: 3px;
+    border-bottom: 1px solid color($navs-color b(+ 15));
+
+    align-items: center;
+    justify-content: flex-end;
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    li, .list-item {
+        display: flex;
+        align-items: center;
+    }
+}

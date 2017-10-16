@@ -1,0 +1,16 @@
+.row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    @mixin isSmall {
+        flex-direction: column;
+    }
+    
+    @for $i from 1 to 12 {
+        @mixin column $i, xs;
+        @mixin atSmall  { @mixin column $i, sm }
+        @mixin atMedium { @mixin column $i, md }
+        @mixin atLarge  { @mixin column $i, lg }
+    }
+}

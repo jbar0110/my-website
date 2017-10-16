@@ -1,0 +1,42 @@
+.show {
+    &-xs {
+        @mixin atSmall { display: none !important }
+    }
+    &-sm {
+        @mixin isSmall { display: none !important }
+        &.only {
+            @mixin atMedium { display: none !important }
+        }
+    }
+    &-md {
+        @mixin smThanMedium { display: none !important }
+        &.only {
+            @mixin atLarge { display: none !important }
+        }
+    }
+    &-lg {
+        @mixin smThanLarge { display: none !important }
+    }
+}
+/*
+.hide {
+    &-xs {
+        @mixin isSmall { display: none !important }
+    }
+    &-sm {
+        @mixin atSmall { display: none !important }
+        &.only {
+            @mixin atMedium { display: none !important }
+        }
+    }
+    &-md {
+        @mixin smThanMedium { display: none !important }
+        &.only {
+            @mixin atLarge { display: none !important }
+        }
+    }
+    &-lg {
+        @mixin smThanLarge { display: none !important }
+    }
+}
+*/

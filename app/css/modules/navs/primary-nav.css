@@ -1,0 +1,100 @@
+.nav--primary {
+    @mixin clearfix;
+
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: $primary-navH;
+    padding: 0 2rem;
+
+    background: $navs-color;
+    color: $navs-text;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    @mixin smThanMedium {
+        justify-content: center;
+    }
+
+    box-shadow: 0 2px 3px 1px clor(black a(0.35));
+
+    &__logo {
+        margin: 1.5rem 0;
+        font-weight: 100;
+
+        @mixin atMedium {
+            margin: 0;
+            position: absolute;
+            left: 1rem;
+        }
+
+        &--image {
+            height: $mob-navH;
+            margin: 0;
+        }
+    }
+
+    &__links {
+        display: flex;
+        @mixin isSmall {
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        @mixin atMedium {
+            height: 100%;
+        }
+
+        a {
+            @mixin noTextDecoration;
+            padding: 0 1rem;
+
+            @mixin isSmall {
+                padding: 1rem 5px;
+                margin: 0.5rem 0;
+                flex-basis: 50%;
+                text-align: center;
+                border-radius: 1rem;
+
+                &:hover {
+                    background: color($brand-primary l(+ 10));
+                    color: #FFF;
+                }
+
+                &.active {
+                    background: $brand-primary;
+                    color: #FFF;
+                    font-weight: 800;
+                }
+            }
+            
+
+            @mixin atMedium {
+                padding-top: calc($primary-navH / 2.5);
+                border-bottom: 6px solid transparent;
+                &:hover {
+                    border-bottom-color: $brand-secondary;
+                }
+                &.active {
+                    border-bottom-color: $brand-primary;
+                }
+            }
+        }
+    }
+
+    @mixin isSmall {
+        flex-direction: column;
+        transition: 0.3s all ease-out;
+
+        position: fixed;
+        z-index: $primary-navZ;
+        left: 0;
+        height: calc(100vh - $mob-navH);
+        top: calc(100vh * -1);
+
+        &.open {
+            top: 0;
+        }
+    }
+
+}

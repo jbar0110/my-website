@@ -1,0 +1,32 @@
+.btn {
+    text-decoration : none;
+    display         : inline-block;
+    text-align      : center;
+    
+    @mixin clickable;
+    @mixin btn-color $brand-default, $darker-gray;
+    @mixin btn-size 1;
+
+    &--clear   {
+        @mixin btn-color transparent, inherit;
+        &:hover { text-decoration: underline }
+    }
+
+    &--primary { @mixin btn-color $brand-primary }
+    &--secondary { @mixin btn-color $brand-secondary }
+    &--success { @mixin btn-color $brand-success }
+    &--info    { @mixin btn-color $brand-info    }
+    &--warning { @mixin btn-color $brand-warning }
+    &--danger  { @mixin btn-color $brand-danger  }
+
+    &--small  { @mixin btn-size 0.65; font-size: 1rem }
+    &--large  { @mixin btn-size 1.25 }
+    &--xlarge { @mixin btn-size 1.60 }
+
+    &--wide {
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

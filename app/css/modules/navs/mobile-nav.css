@@ -1,0 +1,144 @@
+.nav--mobile {
+    @mixin atMedium { display: none !important }
+    
+    transition       : all 0.3s ease-in;
+    background       : $navs-color;
+    position         : fixed;
+    z-index          : $mob-navZ;
+    bottom           : 0;
+    width            : 100%;
+    height           : $mob-navH;
+    margin-bottom    : calc($mob-navH * -3);
+    border-top       : 1px solid $navs-border;
+
+    display: flex;
+    justify-content: space-between;
+
+    &.visible {
+        margin-bottom: 0;
+    }
+    
+    &.nav-open {
+        border-top: none;
+    }
+
+    .left, .right {
+        width: calc(50% - ($mob-navH / 2));
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .icon {
+        background-color : transparent;
+        height           : $mob-navH;
+    }
+
+    .center {
+        @mixin deadCenter;
+        button { width: calc($mob-navH + 25px) !important }
+    }
+
+    button:not(.menu-toggle) {
+        background-color : transparent;
+        color            : #FFF;
+        border           : none;
+        border-radius    : calc($mob-navH / 2);
+        width            : 45%;
+        height           : $mob-navH;
+        margin           : 0;
+
+        &:hover {
+            background-color: color($navs-color b(+ 10));
+        }
+
+        img {
+            height : calc($mob-navH / 2);
+            width  : auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: currentcolor;
+        }
+    }
+
+
+    .menu-toggle {
+        @mixin atMedium { display: none }
+        @mixin hCenter;
+        padding          : 0;
+        z-index          : 300;
+        bottom           : 10px;
+        background-color : $navs-color;
+        width            : 50px;
+        height           : 50px;
+        border           : 1px solid #FFF;
+        border-radius    : 25px;
+
+        /*
+            FOR REFERENCE
+            '&times' : x
+            '&#9776' : hamburger
+        */
+
+        .hamburger {
+            @mixin deadCenter;
+            width  : 20px;
+            height : 20px;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 3px;
+                background-color: #FFF;
+                transition: transform 0.3s ease-out;
+            }
+            .middle {
+                position  : absolute;
+                top       : 50%;
+                left      : 0;
+                transform : translateY(-50%) scaleX(1);
+                width     : 20px;
+                height    : 3px;
+                opacity   : 1;
+                background-color : #FFF;
+                transition       : all 0.3s ease-out;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 20px;
+                height: 3px;
+                background-color: #FFF;
+                transition: transform 0.3s ease-out;
+            }
+        }
+        &--close {
+            $cross-color: $navs-color;
+            background: #FFF;
+            .hamburger {
+                left: 27px;
+                &::before {
+                    transform        : rotate(45deg) scaleX(1.25);
+                    transform-origin : top left;
+                    background-color : $cross-color;
+                }
+                .middle {
+                    opacity          : 0;
+                    transform        : scaleX(0);
+                    transform-origin : left;
+                    background-color : $cross-color;
+                }
+                &::after {
+                    transform         : rotate(-45deg) scaleX(1.25);
+                    transform-origin : bottom left;
+                    background-color : $cross-color;
+                }
+            }
+        }
+    }
+}

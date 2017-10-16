@@ -1,0 +1,51 @@
+.footer {
+    text-align: center;
+    padding-bottom: 0 !important;
+
+    &__copyright-text {
+        text-align: center;
+        font-size: 0.75rem !important;
+        margin: 2rem 0 0.35rem 0;
+        @mixin atMedium {
+            font-size: 1.125rem;
+            margin-top: 2rem;
+        }
+    }
+
+    &__image-warning {
+        font-size: 0.5rem;
+        @mixin atSmall {
+            font-size: 0.7rem;
+        }
+    }
+
+    a {
+        color: inherit;
+    },
+
+    .location-block {
+        padding-bottom: 14;
+        p {
+            font-size: 1.125rem;
+            line-height: 1.35;
+            margin: 0;
+        }
+        @mixin isSmall {
+            margin: 1.35rem;
+        }
+    },
+
+    h1 {
+        margin-bottom: 0
+    }
+
+    strong {
+        font-size: 1.3125rem;
+    },
+    
+    address {
+        line-height: 1.6;
+        margin: 0.65rem 1rem;
+        margin-top: -2.65rem;
+    }
+}

@@ -1,0 +1,87 @@
+.feature-item {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @mixin atSmall {
+        flex-direction: row;
+    }
+
+    &__text {
+        @mixin atSmall { padding-left: 1.85rem }
+    }
+
+    &__title {
+        a {
+            @mixin noTextDecoration;
+            text-decoration: underline;
+        }
+
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 0.7rem;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+        @mixin atSmall {
+            text-align: left;
+            font-size: 1.8rem;
+            margin-top: 1em;
+        }
+    }
+
+    &__icon {
+        @mixin atSmall {
+            max-width: 96px;
+            min-width: 96px;
+            height: auto;
+            display: block;
+        }
+        
+        @mixin atMedium {
+            min-width: 120px;
+            max-width: 120px;
+        }
+    }
+
+    &__content * {
+        text-align: left;
+        line-height: 1.65;
+        margin: 0 0 1.5rem 0;
+
+        @mixin atSmall {
+            font-size: 1.125rem;
+        }
+    }
+
+    &--stacked {
+        @mixin atSmall { 
+            flex-direction: column;
+            align-self: flex-start;
+        }
+
+        button {
+            a {
+                @mixin noTextDecoration
+            }
+        }
+
+        .feature-item {
+            &__title {
+                text-align: center;
+                margin-top: 0;
+                margin-bottom: 0.35rem;
+            }
+            &__text {
+                padding-left: 0;
+                text-align: justify;
+                line-height: 1.35;
+
+                @mixin atSmall {
+                    font-size: 1.125rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.details-view {
+    display: flex;
+
+    flex-direction: column;
+
+    @mixin atMedium {
+        flex-direction: row;
+        &__links {
+            flex-basis: 20%;
+        }
+        &__details {
+            flex-basis: 80%;
+        }
+    }
+
+    &__links {
+        @mixin smThanMedium { display: none !important }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        a {
+            @mixin noTextDecoration;
+            transition: 0.35s all ease;
+
+            line-height: 1.35;
+            border: none;
+            border-bottom: 2px solid $darker-gray;
+            display: block;
+            margin: 0.65rem 0;
+            margin-right: 3rem;
+            padding: 0.5rem 0 0.5rem 2rem;
+
+            &.sub-link {
+                line-height: 1;
+                margin: 0.15rem 0;
+                margin-left: 2.8rem;
+                margin-right: 3rem;
+                font-size: 0.8rem;
+            }
+
+            &:hover, &.active {
+                border-radius: 2rem;
+                border-bottom-color: color($darker-gray a(0.5));
+                background: $mainBlue;
+                color: $white;
+                font-weight: 600;
+            }
+
+            &.active {
+                background: $brand-secondary;
+                color: $black;
+            }
+        }
+    }
+
+    &__details {
+        &__heading {
+            font-weight: 300;
+            @mixin smThanMedium { text-align: center }
+        }
+    }
+}
